@@ -1,7 +1,6 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const Business = require("../models/Business"); 
-
 // Token generator
 const tokenGenerator = (businessId) => {
     return jwt.sign({ id: businessId }, process.env.Jwt_secret, { expiresIn: '7d' });

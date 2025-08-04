@@ -17,7 +17,6 @@ const analyzeSentiment = async (text) => {
       { inputs: text },
       { headers: { Authorization: `Bearer ${API_KEY}` } }
     );
-
     const scores = response.data[0];
     const top = scores.reduce((prev, curr) => (curr.score > prev.score ? curr : prev));
 
@@ -45,5 +44,4 @@ const processFlaggedFeedbacks = async () => {
     console.error("Error processing feedbacks:", err);
   }
 };
-
 module.exports = processFlaggedFeedbacks;
