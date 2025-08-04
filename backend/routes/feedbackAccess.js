@@ -18,7 +18,7 @@ router.post('/feedback-request', async (req, res) => {
 
     await FeedbackCode.create({ businessId, email, code, expiresAt });
 
-    // send email using nodemailer
+    // send email using nodemailer from my email
     const transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
