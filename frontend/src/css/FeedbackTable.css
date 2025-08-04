@@ -1,0 +1,112 @@
+/* FeedbackTable.css */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', sans-serif;
+  min-width: 600px;
+}
+
+thead {
+  background: #3b82f6;
+  color: white;
+}
+
+th,
+td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+tbody tr:hover {
+  background-color: #eef2ff;
+  transition: background 0.2s ease;
+}
+
+.sentiment-label {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.sentiment-positive {
+  background-color: #e0f7e9; /* Light green */
+  color: #2e7d32;
+}
+
+.sentiment-neutral {
+  background-color: #f0f0f0; /* Light gray */
+  color: #616161;
+}
+
+.sentiment-negative {
+  background-color: #fdecea; /* Light red */
+  color: #c62828;
+}
+
+
+/* Mobile responsiveness: switch to cards */
+@media (max-width: 768px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    padding: 10px;
+  }
+
+  td {
+    border: none;
+    padding: 10px 12px;
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    font-size: 0.95rem;
+  }
+
+  td::before {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    width: 45%;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #6b7280;
+  }
+
+  td:nth-of-type(1)::before { content: "Date"; }
+  td:nth-of-type(2)::before { content: "Rating"; }
+  td:nth-of-type(3)::before { content: "Category"; }
+  td:nth-of-type(4)::before { content: "Comment"; }
+}
